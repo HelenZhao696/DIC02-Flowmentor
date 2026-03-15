@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "番茄钟 MVP",
+  "version": "1.0.0",
+  "description": "简单番茄钟插件：专注/休息倒计时。",
+  "permissions": ["storage", "alarms", "offscreen", "idle", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "番茄钟",
+    "default_popup": "index.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}

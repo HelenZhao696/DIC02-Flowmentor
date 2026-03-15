@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>番茄钟插件</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>番茄钟</h1>
+
+      <!-- 模式切换 -->
+      <section class="mode-switch" aria-label="模式切换">
+        <button id="workBtn" class="mode-btn active" type="button">
+          专注 30 秒
+        </button>
+        <button id="breakBtn" class="mode-btn" type="button">
+          休息 30 秒
+        </button>
+      </section>
+
+      <!-- 状态显示 -->
+      <p id="statusText" class="status">当前模式：专注</p>
+      <p id="idleText" class="status">活动中</p>
+      <p id="timer" class="timer" aria-live="polite">00:30</p>
+
+      <!-- 控制按钮 -->
+      <section class="controls" aria-label="计时控制">
+        <button id="startPauseBtn" type="button">开始</button>
+        <button id="resetBtn" type="button" class="secondary">重置</button>
+      </section>
+
+      <!-- 时长设置 -->
+      <section class="settings" aria-label="时长设置">
+        <h2 class="settings-title">设置时长（分钟）</h2>
+        <div class="settings-grid">
+          <label class="settings-label">
+            专注
+            <input
+              id="workMinutesInput"
+              type="number"
+              min="0.1"
+              step="0.5"
+              value="0.5"
+              style="width: 100px; padding: 10px;"
+            />
+          </label>
+
+          <label class="settings-label">
+            休息
+            <input
+              id="breakMinutesInput"
+              type="number"
+              min="0.1"
+              step="0.5"
+              value="0.5"
+              style="width: 100px; padding: 10px;"
+            />
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
