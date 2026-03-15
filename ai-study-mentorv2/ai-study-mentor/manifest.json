@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "AI Study Mentor",
+  "version": "1.0.0",
+  "description": "Focus tool: Pomodoro timer + live emotion/attention detection + Ollama AI coaching.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "offscreen",
+    "idle",
+    "notifications",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:11434/*",
+    "http://127.0.0.1:11435/*",
+    "http://localhost:11434/*",
+    "http://localhost:11435/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self' http://127.0.0.1:11434 http://127.0.0.1:11435 http://localhost:11434 http://localhost:11435;"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "AI Study Mentor",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["models/*", "lib/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
